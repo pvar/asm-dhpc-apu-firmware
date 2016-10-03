@@ -1,0 +1,54 @@
+
+system clock: 16 MHz
+
+sample generation frequency:	32258 Hz
+sample generation interval:		496 clock ticks (31 μsec)
+
+channel update frequency:		192 Hz
+channel update interval:		83328 clock ticks (168 samples)
+
+metronome frequency (Hz):		192 / metronome-sub-divisions
+metronome frequency (bpm):		60 * 192 / metronome-sub-divisions
+
+	metronome-sub-divisions = 128: 	metronome frequency  ~= 1.5Hz  = 90bpm
+	metronome-sub-divisions = 96:  	metronome frequency  ~= 2Hz    = 120bpm
+	metronome-sub-divisions = 77:  	metronome frequency  ~= 2.5Hz  = 150bpm
+	metronome-sub-divisions = 64:  	metronome frequency  ~= 3Hz    = 180bpm
+
+metronome ticks when all metronome-sub-divisions are finished
+
+metronome tick equals to 1/4 of note duration
+
+each note is played for note_dur metronome-sub-divisions
+
+# 90bpm
+	  note_dur = 255: 1/2 duration
+	> note_dur = 128: 1/4 duration
+	  note_dur = 64:  1/8 duration
+	  note_dur = 32:  1/16 duration
+	  note_dur = 16:  1/32 duration
+
+# 120bpm
+	  note_dur = 192: 1/2 duration
+	> note_dur = 96:  1/4 duration
+	  note_dur = 48:  1/8 duration
+	  note_dur = 24:  1/16 duration
+	  note_dur = 12:  1/32 duration
+
+# 150bpm
+	  note_dur = 154: 1/2 duration
+	> note_dur = 77:  1/4 duration
+	  note_dur = 38:  1/8 duration
+	  note_dur = 19:  1/16 duration
+	  note_dur = 10:  1/32 duration
+
+# 180bpm
+	  note_dur = 128: 1/2 duration
+	> note_dur = 64:  1/4 duration
+	  note_dur = 32:  1/8 duration
+	  note_dur = 16:  1/16 duration
+	  note_dur = 8:   1/32 duration
+
+volume envelope - increase step = 4: [ 9 > 12 > 15 ]
+volume envelope - decrease step = 1: [ 15 > 14 > 13 > 12 > 11 > 10 > 9 > 8 ]
+
